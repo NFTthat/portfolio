@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-black font-sans antialiased overflow-x-hidden selection:bg-black selection:text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-ojuju;
+  }
+}
+
+@layer utilities {
+  .clip-hidden {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  
+  .clip-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateY(0);
+    opacity: 1;
+    transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, clip-path, opacity;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1.5px black;
+    color: transparent;
+  }
+}
+
+/* Magnetic Button Hover Target */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Badge Float Animation */
+@keyframes float {
+  0% { transform: rotate(-3deg) translateY(0px); }
+  50% { transform: rotate(-3deg) translateY(-15px); }
+  100% { transform: rotate(-3deg) translateY(0px); }
+}
+
+.badge-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

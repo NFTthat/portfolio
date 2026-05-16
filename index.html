@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOCHUKWU - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Google+Sans+Flex:opsz,wght@8..144,100..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-primary text-black">
+  <div id="app" class="w-full relative border-x border-t border-black min-h-screen">
+
+    <!-- Floating Hamburger Menu Container (Initially in-line, then fixed) -->
+    <div id="nav-action-container" class="md:hidden">
+      <!-- Menu toggle will be placed here via JS or CSS fixed -->
+    </div>
+
+    <!-- Navigation (Full Width) -->
+    <nav class="w-full flex flex-col pt-4 md:pt-6">
+      <!-- Top Row: Links (Desktop Only) -->
+      <div class="hidden md:flex w-full justify-center pb-4 border-b border-black">
+        <ul
+          class="flex flex-wrap justify-center gap-3 md:gap-4 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em] px-6">
+          <li><a href="#work"
+              class="bg-black text-white px-8 py-2.5 rounded-full hover:bg-black/80 transition-all inline-block">MY
+              WORK</a></li>
+          <li><a href="#about"
+              class="bg-black text-white px-8 py-2.5 rounded-full hover:bg-black/80 transition-all inline-block">ABOUT
+              ME</a></li>
+          <li><a href="#resume"
+              class="bg-black text-white px-8 py-2.5 rounded-full hover:bg-black/80 transition-all inline-block">RESUMÉ</a>
+          </li>
+          <li><a href="#contact"
+              class="bg-black text-white px-8 py-2.5 rounded-full hover:bg-black/80 transition-all inline-block">REACH
+              OUT</a></li>
+        </ul>
+      </div>
+
+      <!-- Header Rows -->
+      <!-- Row 1: Title & Avatar -->
+      <div class="w-full border-b border-black py-4 md:py-6 flex justify-between items-center px-6 md:px-12">
+        <h1 class="font-ojuju font-bold text-4xl md:text-4xl lg:text-[2.2rem] uppercase tracking-wider text-left">THE
+          PORTFOLIO</h1>
+
+        <!-- Desktop Only Avatar -->
+        <div class="hidden md:flex items-center">
+          <div class="relative w-16 h-16">
+            <img src="pfp.png" alt="Tochukwu Profile"
+              class="w-full h-full rounded-full object-cover grayscale border-2 border-black/5">
+            <div class="absolute top-1 right-1 w-4 h-4 bg-[#00D05A] rounded-full border-2 border-primary"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Mobile Only Action Bar (Avatar & Menu) -->
+      <div class="w-full py-4 flex justify-between items-center px-6 md:hidden">
+        <!-- Profile Image (Left Aligned with Title above) -->
+        <div class="relative flex items-center">
+          <div class="relative w-16 h-16">
+            <img src="pfp.png" alt="Tochukwu Profile"
+              class="w-full h-full rounded-full object-cover grayscale border-2 border-black/5">
+            <div class="absolute top-1 right-1 w-4 h-4 bg-[#00D05A] rounded-full border-2 border-primary"></div>
+          </div>
+        </div>
+
+        <!-- Hamburger Menu (Right) -->
+        <div class="md:hidden">
+          <button id="menu-toggle"
+            class="bg-transparent text-black px-6 py-2.5 rounded-full flex items-center gap-3 border-2 border-black/20 hover:scale-105 active:scale-95 transition-all">
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Menu</span>
+            <div class="flex flex-col gap-1 w-5">
+              <span class="w-full h-0.5 bg-black transition-all duration-300"></span>
+              <span class="w-full h-0.5 bg-black transition-all duration-300"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="w-full bg-[#E2E5EB]">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 w-full">
+        <!-- Hero Section -->
+        <section class="flex flex-col items-center justify-center relative w-full pt-24 md:pt-32 pb-20">
+
+          <!-- Down Arrow Indicator -->
+          <div class="absolute right-0 top-0 hidden md:flex flex-col items-center gap-2">
+            <svg class="w-10 h-10 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
+
+          <!-- Tilted Badge (Layer 1) -->
+          <div
+            class="relative w-[85%] md:w-[65%] max-w-4xl bg-[#555555] rounded-[30px] md:rounded-[40px] aspect-[4/3] md:aspect-[16/8] -rotate-3 flex flex-col justify-between overflow-hidden z-20 mx-auto shadow-2xl badge-float mt-8">
+
+            <!-- PRAISE text -->
+            <div class="absolute top-4 md:top-8 left-0 w-full flex justify-center z-0">
+              <span
+                class="font-ojuju text-[5rem] md:text-[11rem] lg:text-[15rem] leading-[0.9] text-black font-bold tracking-wide uppercase">PRAISE</span>
+            </div>
+
+            <!-- Silhouette Image (Partially Masked) -->
+            <div
+              class="absolute bottom-0 right-[-10%] md:right-[5%] w-[100%] md:w-[50%] h-[90%] md:h-[120%] flex items-end justify-center z-10 pointer-events-none">
+              <img src="/src/assets/hero-card-img.png" alt="Silhouette"
+                class="w-full h-full object-contain object-bottom grayscale brightness-50">
+            </div>
+
+            <!-- Bottom Left Text -->
+            <div
+              class="absolute bottom-8 md:bottom-10 left-8 md:left-12 flex flex-col text-white font-google-sans uppercase tracking-[0.15em] text-[10px] md:text-sm font-light leading-relaxed z-20">
+              <span>DESIGNER</span>
+              <span>&amp; CREATIVE</span>
+            </div>
+
+          </div>
+
+          <!-- Name "TOCHUKWU" (Layer 2) -->
+          <div class="relative z-10 -mt-32 md:-mt-40 w-full flex justify-center">
+            <h1
+              class="font-ojuju text-[18vw] md:text-[17vw] leading-[0.9] tracking-tighter uppercase text-black font-medium whitespace-nowrap reveal-text">
+              TOCHUKWU
+            </h1>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+    <!-- Introduction Card Section -->
+    <section class="w-full pb-20 md:pb-32 relative z-30 px-6 md:px-12 my-20 md:my-32">
+      <div class="max-w-7xl mx-auto w-full">
+        <div
+          class="w-full bg-black rounded-[40px] md:rounded-[60px] py-32 md:py-52 px-8 md:px-24 flex items-center justify-center">
+          <p
+            class="text-primary text-center font-sans text-lg md:text-xl lg:text-2xl uppercase tracking-[0.2em] leading-[2.5] md:leading-[2.8] max-w-5xl">
+            I'M TOCHUKWU PRAISE, A NIGERIAN DESIGNER LIVING AND WORKING IN THE UK. OVER THE PAST FEW YEARS, I'VE BEEN
+            CRAFTING DIGITAL EXPERIENCES ACROSS WEB3, FINTECH, BRANDING, AND PRODUCT DESIGN. FROM BUILDING INTERFACES
+            FOR DEFI PLATFORMS TO SHAPING VISUAL IDENTITIES AND SOCIAL CAMPAIGNS, I ENJOY TURNING COMPLEX IDEAS INTO
+            CLEAN, HUMAN-CENTERED EXPERIENCES. SOME MAY CALL ME EXPERIENCED. I'D RATHER STAY CURIOUS AND KEEP LEARNING.
+          </p>
+        </div>
+      </div>
+
+      <!-- Passion Text -->
+      <div class="w-full flex justify-center mt-16 md:mt-24">
+        <h2
+          class="font-ojuju text-[6vw] md:text-5xl lg:text-6xl tracking-[0.2em] uppercase text-outline text-center whitespace-nowrap">
+          PASSION + TALENT + CURIOSITY
+        </h2>
+      </div>
+    </section>
+
+    <!-- My Work -->
+    <section id="work" class="py-24 md:py-32 w-full my-32 md:my-48 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto w-full">
+        <h2
+          class="text-[18vw] md:text-[15vw] lg:text-[18vw] leading-none tracking-tighter uppercase text-center mb-12 font-ojuju">
+          MY WORK
+        </h2>
+
+      <div class="flex justify-between items-center mb-8 px-2 md:px-4">
+        <div class="text-3xl font-bold tracking-tighter">...</div>
+        <div class="font-ojuju text-xl md:text-2xl uppercase tracking-tighter opacity-80">GRAPHIC DESIGN</div>
+      </div>
+
+      <div class="flex flex-col gap-16">
+        <!-- Margarita Finance Project Card -->
+        <div
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          <!-- Left: Content -->
+          <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
+            <div>
+              <h3 class="text-6xl md:text-5xl font-bold tracking-tight mb-4 uppercase">MARGARITA FINANCE</h3>
+              <div class="space-y-1 mb-8 opacity-70 uppercase font-sans tracking-widest text-[10px] md:text-xs">
+                <p>2024 - 2026</p>
+                <p>LONDON <span class="opacity-50">(REMOTE)</span></p>
+              </div>
+
+              <p class="text-base md:text-lg leading-relaxed opacity-80 max-w-xl font-light">
+                Margarita Finance is a DeFi platform offering structured investment products. I led design and social
+                media, creating visuals that simplified complex financial concepts and increased engagement.
+              </p>
+            </div>
+
+            <div class="mt-12 flex flex-wrap gap-4">
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                View On X
+              </a>
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Figma file
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Visuals Grid Container -->
+          <div class="w-full lg:w-1/2">
+            <div
+              class="bg-[#EAE9E5] p-3 md:p-5 rounded-[2rem] md:rounded-[2.5rem] h-full flex items-center justify-center">
+              <div class="grid grid-cols-2 gap-3 md:gap-4 w-full aspect-square">
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
+                  <img src="/1.png" class="w-full h-full object-cover" alt="Margarita Finance 1">
+                </div>
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
+                  <img src="/2.png" class="w-full h-full object-cover" alt="Margarita Finance 2">
+                </div>
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
+                  <img src="/3.png" class="w-full h-full object-cover" alt="Margarita Finance 3">
+                </div>
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
+                  <img src="/4.png" class="w-full h-full object-cover" alt="Margarita Finance 4">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NU START Project Card -->
+        <div
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          <!-- Left: Content -->
+          <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
+            <div>
+              <h3 class="text-6xl md:text-5xl font-bold tracking-tight mb-4 uppercase">NU START</h3>
+              <div class="space-y-1 mb-8 opacity-70 uppercase font-sans tracking-widest text-[10px] md:text-xs">
+                <p>2026</p>
+                <p>LONDON <span class="opacity-50">(REMOTE)</span></p>
+              </div>
+
+              <p class="text-base md:text-lg leading-relaxed opacity-80 max-w-xl font-light">
+                NUStart is a non-profit organisation focused on community development and awareness campaigns. As a
+                volunteer designer, I created social media visuals for key global events and initiatives, helping
+                communicate important messages in a clear, engaging, and accessible way.
+              </p>
+            </div>
+
+            <div class="mt-12 flex flex-wrap gap-4">
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                View On Instagram
+              </a>
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Figma file
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Visuals Grid Container (3x3) -->
+          <div class="w-full lg:w-1/2">
+            <div
+              class="bg-[#EAE9E5] p-3 md:p-5 rounded-[2rem] md:rounded-[2.5rem] h-full flex items-center justify-center">
+              <div class="grid grid-cols-3 gap-2 md:gap-3 w-full aspect-square">
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/5.png" class="w-full h-full object-cover" alt="NU START 1">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/6.png" class="w-full h-full object-cover" alt="NU START 2">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/7.png" class="w-full h-full object-cover" alt="NU START 3">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/8.png" class="w-full h-full object-cover" alt="NU START 4">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/9.png" class="w-full h-full object-cover" alt="NU START 5">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/10.png" class="w-full h-full object-cover" alt="NU START 6">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/11.png" class="w-full h-full object-cover" alt="NU START 7">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/12.png" class="w-full h-full object-cover" alt="NU START 8">
+                </div>
+                <div class="rounded-lg md:rounded-xl overflow-hidden">
+                  <img src="/13.png" class="w-full h-full object-cover" alt="NU START 9">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI/UX Section Meta -->
+      <div class="flex justify-between items-center mt-24 mb-8 px-2 md:px-4">
+        <div class="text-3xl font-bold tracking-tighter">...</div>
+        <div class="font-ojuju text-xl md:text-2xl uppercase tracking-tighter opacity-80">UI/UX DESIGN</div>
+      </div>
+
+      <div class="flex flex-col gap-16">
+        <!-- OAKCHAIN Project Card -->
+        <div
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          <!-- Left: Content -->
+          <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
+            <div>
+              <h3 class="text-6xl md:text-5xl font-bold tracking-tight mb-4 uppercase">OAKCHAIN</h3>
+              <div class="space-y-1 mb-8 opacity-70 uppercase font-sans tracking-widest text-[10px] md:text-xs">
+                <p>2020 - 2023</p>
+                <p>NIGERIA <span class="opacity-50">(REMOTE)</span></p>
+              </div>
+
+              <p class="text-base md:text-lg leading-relaxed opacity-80 max-w-xl font-light">
+                Oakchain is an EduTech platform focused on introducing users to Web3 through structured learning,
+                content, and digital experiences. My role was to design a visually engaging and user-friendly
+                interface that simplifies complex blockchain concepts and improves accessibility for new users.
+              </p>
+            </div>
+
+            <div class="mt-12 flex flex-wrap gap-4">
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                View live website
+              </a>
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Figma file
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Visuals (Single Large Image) -->
+          <div class="w-full lg:w-1/2">
+            <div
+              class="bg-[#EAE9E5] p-3 md:p-5 rounded-[2rem] md:rounded-[2.5rem] h-full flex items-center justify-center">
+              <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm w-full aspect-square bg-white">
+                <iframe src="https://oakchain-website.vercel.app" class="w-full h-full border-none"
+                  title="Oakchain Live Site"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAINIFY Project Card -->
+        <div
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          <!-- Left: Content -->
+          <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
+            <div>
+              <h3 class="text-6xl md:text-5xl font-bold tracking-tight mb-4 uppercase">GAINIFY</h3>
+              <div class="space-y-1 mb-4 opacity-70 uppercase font-sans tracking-widest text-[10px] md:text-xs">
+                <p>2023 - 2024</p>
+                <p>NIGERIA, ABUJA</p>
+              </div>
+
+              <div class="mb-8">
+                <span
+                  class="bg-[#D31F3F] text-white px-4 py-1.5 rounded-full text-[10px] uppercase font-bold tracking-widest">Project
+                  Closed</span>
+              </div>
+
+              <p class="text-base md:text-lg leading-relaxed opacity-80 max-w-xl font-light">
+                Gainify is a permissionless DeFi farming platform where I led both the UI/UX design and social media
+                visual strategy. My role extended beyond product design into building a cohesive visual ecosystem that
+                supports user interaction, brand identity, and growth across digital touchpoints.
+              </p>
+            </div>
+
+            <div class="mt-12 flex flex-wrap gap-4">
+              <a href="#"
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Figma file
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Visuals (Grid + Large Image) -->
+          <!-- Right: Visuals (Screenshot Layout) -->
+          <div class="w-full lg:w-1/2 flex flex-col gap-8">
+            <!-- Top Row: Full 14.png Design -->
+            <div class="bg-white/5 p-3 md:p-4 rounded-[2rem] md:rounded-[2.5rem] border border-white/10 shadow-2xl">
+              <div class="rounded-xl md:rounded-2xl overflow-hidden">
+                <img src="/14.png" class="w-full h-auto object-contain" alt="GAINIFY Design Full">
+              </div>
+            </div>
+
+            <!-- Bottom Row: Large Laptop Mockup -->
+            <div class="w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden">
+              <img src="/15.png" class="w-full h-auto object-contain" alt="GAINIFY Dashboard Mockup">
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Picks -->
+    <section id="other-picks" class="py-24 md:py-32 w-full overflow-hidden my-32 md:my-48 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto w-full">
+        <h2
+          class="text-[15vw] md:text-[12vw] lg:text-[14vw] leading-none tracking-tighter uppercase text-center mb-16 font-ojuju whitespace-nowrap">
+          OTHER PICKS
+        </h2>
+
+        <div class="w-full flex flex-col">
+          <!-- Item 1 -->
+          <div
+            class="pick-item flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium transition-colors duration-0 hover:bg-black hover:text-white px-4 cursor-pointer">
+            <div class="w-1/3 text-left font-bold md:text-lg">KREATORS</div>
+            <div class="w-1/3 text-center opacity-60">2025</div>
+            <div class="w-1/3 text-right opacity-80">GRAPHIC DESIGNS & WEBSITE UI</div>
+          </div>
+          <!-- Item 2 -->
+          <div
+            class="pick-item flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium transition-colors duration-0 hover:bg-black hover:text-white px-4 cursor-pointer">
+            <div class="w-1/3 text-left font-bold md:text-lg">KEBULAN GRID</div>
+            <div class="w-1/3 text-center opacity-60">2025</div>
+            <div class="w-1/3 text-right opacity-80">UI DESIGN</div>
+          </div>
+          <!-- Item 3 -->
+          <div
+            class="pick-item flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium transition-colors duration-0 hover:bg-black hover:text-white px-4 cursor-pointer">
+            <div class="w-1/3 text-left font-bold md:text-lg">ALGOFAMINIONS</div>
+            <div class="w-1/3 text-center opacity-60">2022</div>
+            <div class="w-1/3 text-right opacity-80">UI & GRAPHIC DESIGN</div>
+          </div>
+          <!-- Item 4 -->
+          <div
+            class="pick-item flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium transition-colors duration-0 hover:bg-black hover:text-white px-4 cursor-pointer">
+            <div class="w-1/3 text-left font-bold md:text-lg">BLOCKCYCLE</div>
+            <div class="w-1/3 text-center opacity-60">2022</div>
+            <div class="w-1/3 text-right opacity-80">GRAPHIC DESIGN</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-24 md:py-32 w-full flex flex-col items-center">
+    <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center">
+      <h2
+        class="text-[18vw] md:text-[15vw] lg:text-[18vw] leading-none tracking-tighter uppercase text-center font-ojuju">
+        ABOUT ME
+      </h2>
+      <p class="mt-4 mb-16 text-xs md:text-sm uppercase tracking-[0.3em] font-medium opacity-80">MY LONG STORY SHORT
+      </p>
+
+      <!-- Black Container -->
+      <div
+        class="w-full bg-black text-white rounded-[2.5rem] md:rounded-[40px] p-8 md:p-20 relative overflow-hidden flex flex-col items-center gap-24 border border-white/10">
+
+        <!-- Side Indicator -->
+        <div class="absolute top-10 left-8 md:top-12 md:left-12 flex flex-col items-center gap-2 opacity-40">
+          <div class="text-xl leading-none font-bold">...</div>
+          <div
+            class="w-px h-12 bg-white/40 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:border-l-4 after:border-l-transparent after:border-r-4 after:border-r-transparent after:border-t-4 after:border-t-white/40">
+          </div>
+        </div>
+
+        <!-- Timeline Item 2018 -->
+        <div class="flex flex-col items-center text-center max-w-4xl">
+          <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2018</h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
+            I gained admission to study Graphic Design under the School of Art at Ambrose Alli University driven by my
+            passion for technological advancement and the world of design.
+          </p>
+        </div>
+
+        <!-- Timeline Item 2019 -->
+        <div class="flex flex-col items-center text-center max-w-4xl">
+          <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2019</h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
+            I got a job at <span class="font-bold text-white opacity-100">Swirge</span>, a social media platform built
+            on the blockchain to give users full control and protection over their data on the internet. I worked
+            closely with the marketing team through design and product marketing, gaining valuable experience in a
+            fast-paced startup environment. This was where my passion truly skyrocketed.
+          </p>
+        </div>
+
+        <!-- Timeline Item 2022 -->
+        <div class="flex flex-col items-center text-center max-w-4xl">
+          <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2022</h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
+            I graduated from the prestigious Ambrose Alli University with a <span
+              class="font-bold text-white opacity-100">Second Class Upper</span> (2:1) degree in Graphic Design, while
+            also building with <span class="font-bold text-white opacity-100">Oakchain</span>, a blockchain
+            educational platform focused on onboarding newcomers into Web3 and blockchain technology.
+          </p>
+        </div>
+
+        <!-- Timeline Item 2023 -->
+        <div class="flex flex-col items-center text-center max-w-4xl">
+          <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2023</h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
+            I landed several graphic design gigs with projects like <span
+              class="font-bold text-white opacity-100">Gainify, Blockcycle, AlgoFaminions, and FanBet</span>. Most of
+            these projects were built on the Algorand blockchain network, an American-based blockchain ecosystem. I
+            played key roles as a social media graphic designer and UI/UX designer, and this was where I gained
+            real-world design experience creating for thousands of users.
+          </p>
+        </div>
+
+        <!-- Timeline Item 2024 -->
+        <div class="flex flex-col items-center text-center max-w-4xl">
+          <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2024</h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
+            Looking back, I've had the privilege of collaborating with a diverse range of clients, from solo
+            entrepreneurs to startups and well-known brands like Margarita Finance, Kreators, Solana Roundtable,
+            Confessol, Walk Of David, NU Start Community, Wondercat AI, and many others. Each partnership has shaped
+            the way I view businesses and added strong layers to my design journey, helping shape me into the designer
+            I am today.
+          </p>
+        </div>
+
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Reviews Section -->
+  <section id="reviews" class="py-24 md:py-32 w-full flex flex-col items-center">
+    <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center">
+      <!-- Header with Bracketed Line -->
+      <div class="w-full mb-16 flex flex-col items-center px-4 md:px-12">
+        <div class="w-full  border-t border-black flex justify-center relative">
+          <span class="bg-primary px-8 font-ojuju text-xl md:text-2xl uppercase tracking-widest absolute -top-4">CLIENT
+            REVIEWS</span>
+        </div>
+        <div class="w-full h-6 flex justify-between">
+          <div class="w-px h-full bg-black"></div>
+          <div class="w-px h-full bg-black"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <!-- Review 1 -->
+        <div
+          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden">
+          <div class="relative z-10">
+            <div
+              class="text-[25rem] md:text-[30rem] font-ojuju leading-none absolute -top-20 md:-top-30 -left-8 md:-left-12 select-none opacity-100 pointer-events-none">
+              “</div>
+            <div class="pt-24 md:pt-32">
+              <p class="text-base md:text-lg leading-snug opacity-90 font-medium relative z-20">
+                Talented designer, always eager to learn, grow, and listen closely to instructions.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 relative z-20">
+            <h4 class="text-4xl md:text-4xl font-ojuju font-bold mb-1">Matt Wyss</h4>
+            <p class="text-sm opacity-80">Margarita Finance</p>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div
+          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden">
+          <div class="relative z-10">
+            <div
+              class="text-[25rem] md:text-[30rem] font-ojuju leading-none absolute -top-20 md:-top-30 -left-8 md:-left-12 select-none opacity-100 pointer-events-none">
+              “</div>
+            <div class="pt-24 md:pt-32">
+              <p class="text-base md:text-lg leading-snug opacity-90 font-medium relative z-20">
+                Easy to work with, always bringing fresh ideas and creative thinking to the table.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 relative z-20">
+            <h4 class="text-4xl md:text-4xl font-ojuju font-bold mb-1">Lawrence</h4>
+            <p class="text-sm opacity-80">Blockcycle</p>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div
+          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden">
+          <div class="relative z-10">
+            <div
+              class="text-[25rem] md:text-[30rem] font-ojuju leading-none absolute -top-20 md:-top-30 -left-8 md:-left-12 select-none opacity-100 pointer-events-none">
+              “</div>
+            <div class="pt-24 md:pt-32">
+              <p class="text-base md:text-lg leading-snug opacity-90 font-medium relative z-20">
+                Your product marketing graphic campaigns have helped us attract new users and build stronger
+                connections with our base of influencers.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 relative z-20">
+            <h4 class="text-4xl md:text-4xl font-ojuju font-bold mb-1">Marco Oliver</h4>
+            <p class="text-sm opacity-80">Kreators</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 md:py-40 w-full flex flex-col items-center">
+    <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center">
+      <h2
+        class="text-[18vw] md:text-[15vw] lg:text-[18vw] leading-none tracking-tighter uppercase text-center mb-12 md:mb-24 font-ojuju">
+        SERVICES
+      </h2>
+
+      <div class="w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+        <!-- Left: Services List -->
+        <div class="w-full lg:w-1/2 space-y-6 md:space-y-8">
+          <div class="flex items-center gap-4 md:gap-6 group">
+            <div class="flex flex-row gap-1 opacity-100">
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+            </div>
+            <span class="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight">Website Design</span>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 group">
+            <div class="flex flex-row gap-1 opacity-100">
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+            </div>
+            <span class="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight">Social Media Design</span>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 group">
+            <div class="flex flex-row gap-1 opacity-100">
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+            </div>
+            <span class="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight">Product Marketing Design</span>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 group">
+            <div class="flex flex-row gap-1 opacity-100">
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+            </div>
+            <span class="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight">Print & Graphic Design</span>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 group">
+            <div class="flex flex-row gap-1 opacity-100">
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+            </div>
+            <span class="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight">Presentation / Pitch Deck
+              Design</span>
+          </div>
+          <div class="flex items-center gap-4 md:gap-6 group">
+            <div class="flex flex-row gap-1 opacity-100">
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+              <div class="w-1.5 h-1.5 bg-black"></div>
+            </div>
+            <span class="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight">Motion Graphic Design</span>
+          </div>
+        </div>
+
+        <!-- Right: Pattern Image -->
+        <div
+          class="w-full lg:w-1/2 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden aspect-[16/10] lg:aspect-[4/3] shadow-lg border border-black/5">
+          <img src="/16.png" class="w-full h-full object-cover" alt="Services Visual">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact Section -->
+  <footer id="contact" class="py-24 md:py-32 w-full flex flex-col items-center">
+    <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center">
+      <!-- Massive Heading -->
+      <h2
+        class="text-[20vw] md:text-[15vw] lg:text-[18vw] leading-none tracking-tighter uppercase text-center font-ojuju mb-4">
+        CONTACT
+      </h2>
+
+      <!-- Divider Line -->
+      <div class="w-full h-px bg-black/20 mb-8"></div>
+
+      <!-- Subtext -->
+      <p class="text-sm md:text-base font-medium opacity-80 mb-16 text-center tracking-tight">
+        Now that you are here, Let's connect
+      </p>
+
+      <!-- Contact Buttons Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl mb-24">
+        <!-- Video Call -->
+        <div class="flex flex-col items-center gap-4">
+          <a href="#"
+            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors">
+            <span class="text-lg md:text-xl font-medium">Video Call</span>
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 10L19 6V18L15 14V10Z" fill="#34A853" stroke="#34A853" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4 6H15V18H4V6Z" fill="#FBBC04" stroke="#FBBC04" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <p class="text-[10px] uppercase tracking-widest opacity-60">Google Meet or Zoom</p>
+        </div>
+
+        <!-- Connect -->
+        <div class="flex flex-col items-center gap-4">
+          <a href="#"
+            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors">
+            <span class="text-lg md:text-xl font-medium">Connect</span>
+            <span class="text-blue-500 font-bold text-xl">in</span>
+          </a>
+          <p class="text-[10px] uppercase tracking-widest opacity-60">LinkedIn</p>
+        </div>
+
+        <!-- Follow -->
+        <div class="flex flex-col items-center gap-4">
+          <a href="#"
+            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors">
+            <span class="text-lg md:text-xl font-medium">Follow</span>
+            <svg class="w-5 h-5 fill-current text-[#1DA1F2]" viewBox="0 0 24 24">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+            </svg>
+          </a>
+          <p class="text-[10px] uppercase tracking-widest opacity-60">Twitter / X</p>
+        </div>
+      </div>
+
+      <!-- Bottom Black Bar -->
+      <div
+        class="w-full bg-black text-white rounded-full py-6 px-8 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
+        <p class="opacity-80">Look around you, everything has a design 😍</p>
+        <p class="opacity-60 font-light">Built by Tochukwu and Nansel</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu"
+    class="fixed inset-0 bg-primary z-[100] translate-x-full transition-transform duration-500 flex flex-col items-center justify-center">
+    <ul class="flex flex-col items-center gap-12 text-4xl font-ojuju uppercase tracking-tighter">
+      <li><a href="#work" class="mobile-link">MY WORK</a></li>
+      <li><a href="#about" class="mobile-link">ABOUT ME</a></li>
+      <li><a href="#resume" class="mobile-link">RESUMÉ</a></li>
+      <li><a href="#contact" class="mobile-link">REACH OUT</a></li>
+    </ul>
+
+    <!-- Close label or decor -->
+    <div class="absolute bottom-20 uppercase tracking-[0.5em] text-xs opacity-40">
+      CLOSE MENU
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
