@@ -41,13 +41,13 @@
 
 /* Badge Float Animation */
 @keyframes float {
-  0% { transform: rotate(-3deg) translateY(0px); }
-  50% { transform: rotate(-3deg) translateY(-15px); }
-  100% { transform: rotate(-3deg) translateY(0px); }
+  0% { transform: rotate(3deg) translateY(0px); }
+  50% { transform: rotate(4deg) translateY(-12px); }
+  100% { transform: rotate(3deg) translateY(0px); }
 }
 
 .badge-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Smooth Scrolling */
