@@ -149,4 +149,74 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = scrollY;
   }, { passive: true });
 
+  // 5. Booking Modal Functionality
+  const bookServiceBtn = document.getElementById('book-service-btn');
+  const bookingModal = document.getElementById('booking-modal');
+  const closeBookingModal = document.getElementById('close-booking-modal');
+  const bookingForm = document.getElementById('booking-form');
+  const bookingSuccess = document.getElementById('booking-success');
+
+  if (bookServiceBtn && bookingModal && closeBookingModal) {
+    const openModal = (e) => {
+      e.preventDefault();
+      bookingModal.classList.remove('hidden');
+      bookingModal.classList.add('flex');
+      // trigger reflow for transitions
+      void bookingModal.offsetWidth;
+      bookingModal.classList.remove('opacity-0');
+      bookingModal.querySelector('.bg-primary').classList.remove('translate-y-8');
+      bookingModal.querySelector('.bg-primary').classList.add('translate-y-0');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      bookingModal.classList.add('opacity-0');
+      bookingModal.querySelector('.bg-primary').classList.add('translate-y-8');
+      bookingModal.querySelector('.bg-primary').classList.remove('translate-y-0');
+      
+      setTimeout(() => {
+        bookingModal.classList.remove('flex');
+        bookingModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        
+        // Reset state after close
+        if (bookingForm && bookingSuccess) {
+          bookingForm.reset();
+          bookingForm.classList.remove('hidden');
+          bookingSuccess.classList.add('hidden');
+        }
+      }, 300);
+    };
+
+    bookServiceBtn.addEventListener('click', openModal);
+    closeBookingModal.addEventListener('click', closeModal);
+    
+    // Close on overlay click
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        closeModal();
+      }
+    });
+
+    // Handle form submit
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Simulate submit request
+        const submitBtn = bookingForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'SUBMITTING...';
+        
+        setTimeout(() => {
+          bookingForm.classList.add('hidden');
+          bookingSuccess.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+        }, 1200);
+      });
+    }
+  }
+
 });
