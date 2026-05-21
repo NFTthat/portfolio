@@ -10,10 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         entry.target.classList.remove('clip-hidden');
         entry.target.classList.add('clip-reveal');
-        // Optional: unobserve after revealing if we only want it to happen once
-        // revealObserver.unobserve(entry.target);
       } else {
-        // Optional: remove this if you don't want it to hide again when scrolling up
         entry.target.classList.add('clip-hidden');
         entry.target.classList.remove('clip-reveal');
       }
@@ -25,11 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  // 1b. Scroll Reveal Fallback for browsers without CSS view-timeline support
+  if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+    const scrollRevealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -60px 0px"
+    });
+
+    document.querySelectorAll('.scroll-reveal-el').forEach(el => {
+      scrollRevealObserver.observe(el);
+    });
+  }
+
   // 2. Scroll-Linked Opacity for Timeline
   const timelineItems = document.querySelectorAll('.timeline-item');
   
-  // Using a custom scroll event to calculate distance to center of screen
-  // for smoother opacity transitions rather than discrete IntersectionObserver steps
   const updateTimelineOpacity = () => {
     const windowCenter = window.innerHeight / 2;
     
@@ -38,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const itemCenter = rect.top + rect.height / 2;
       const distanceToCenter = Math.abs(windowCenter - itemCenter);
       
-      // If within 150px of center, full opacity, else fade out to 0.3
-      if (distanceToCenter < 150) {
+      // If within 200px of center, full opacity and scaled, else fade out to 0.4
+      if (distanceToCenter < 200) {
         item.style.opacity = '1';
-        item.style.transform = 'scale(1.05)';
+        item.style.transform = 'scale(1.03)';
       } else {
-        item.style.opacity = '0.3';
-        item.style.transform = 'scale(1)';
+        item.style.opacity = '0.35';
+        item.style.transform = 'scale(0.97)';
       }
     });
   };
@@ -61,16 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
       
-      // Translate the button slightly towards the cursor
-      // Reduced the multiplier for a subtler effect
-      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+      // Translate the button slightly towards the cursor and scale slightly
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px) scale(1.03)`;
     });
 
     btn.addEventListener('mouseleave', () => {
-      // Reset position when cursor leaves with a cubic-bezier ease (handled in CSS)
-      btn.style.transform = 'translate(0px, 0px)';
+      // Reset position when cursor leaves
+      btn.style.transform = 'translate(0px, 0px) scale(1)';
     });
   });
+
   // 4. Mobile Menu Toggle & Scroll Effect
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');

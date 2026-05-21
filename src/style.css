@@ -33,24 +33,138 @@
   }
 }
 
-/* Magnetic Button Hover Target */
+/* On-load Animation Keyframes */
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes name-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes badge-load {
+  from {
+    opacity: 0;
+    transform: scale(0.85) rotate(0deg) translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(3deg) translateY(0);
+  }
+}
+
+/* On-load Classes */
+.animate-load-fade-down {
+  opacity: 0;
+  animation: fade-down 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-load-fade-up {
+  opacity: 0;
+  animation: fade-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-load-name {
+  opacity: 0;
+  animation: name-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-load-badge {
+  opacity: 0;
+  animation: badge-load 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scroll-Driven Reveal Animations */
+.scroll-reveal-el {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-el.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Native Scroll-driven animation when supported */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes scroll-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    .scroll-reveal-el {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      animation: scroll-fade-in auto linear forwards;
+      animation-timeline: view();
+      animation-range: entry 10% entry 40%;
+    }
+  }
+}
+
+/* Magnetic Button Hover Interaction */
 .magnetic-btn {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+}
+.magnetic-btn:hover {
+  transform: scale(1.02);
 }
 
 /* Badge Float Animation */
 @keyframes float {
-  0% { transform: rotate(3deg) translateY(0px); }
-  50% { transform: rotate(4deg) translateY(-12px); }
-  100% { transform: rotate(3deg) translateY(0px); }
+  0% { transform: rotate(0deg) translateY(0px); }
+  50% { transform: rotate(1.5deg) translateY(-12px); }
+  100% { transform: rotate(0deg) translateY(0px); }
 }
 
 .badge-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite 1.3s;
+}
+
+/* Timeline Item Transition */
+.timeline-item {
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
+

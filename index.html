@@ -30,23 +30,23 @@
         <ul
           class="flex flex-wrap justify-center gap-3 md:gap-4 text-[10px] md:text-xs font-medium uppercase tracking-widest px-6">
           <li><a href="#work"
-              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block">MY
+              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block magnetic-btn">MY
               WORK</a></li>
           <li><a href="#about"
-              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block">ABOUT
+              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block magnetic-btn">ABOUT
               ME</a></li>
           <li><a href="#resume"
-              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block">RESUMÉ</a>
+              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block magnetic-btn">RESUMÉ</a>
           </li>
           <li><a href="#contact"
-              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block">REACH
+              class="bg-black text-white px-8 py-3 rounded-full hover:bg-black/80 transition-colors inline-block magnetic-btn">REACH
               OUT</a></li>
         </ul>
       </div>
 
       <!-- Header Rows -->
       <!-- Row 1: Title (Always Left on Mobile, Left on Desktop) -->
-      <div class="w-full border-b-2 border-black py-4 md:py-6 flex justify-between items-center px-6 md:px-12">
+      <div class="w-full border-b-2 border-black py-4 md:py-6 flex justify-between items-center px-6 md:px-12 animate-load-fade-down">
         <h1 class="font-ojuju font-bold text-5xl md:text-4xl lg:text-[2rem] uppercase tracking-wider text-left">THE
           PORTFOLIO</h1>
 
@@ -81,7 +81,7 @@
     <!-- Hamburger Menu (Right) -->
     <div class="md:hidden">
       <button id="menu-toggle"
-        class="bg-transparent text-black px-6 py-2.5 rounded-full flex items-center gap-3 border-2 border-black/20 hover:scale-105 active:scale-95 transition-all">
+        class="bg-transparent text-black px-6 py-2.5 rounded-full flex items-center gap-3 border-2 border-black/20 hover:scale-105 active:scale-95 transition-all magnetic-btn">
         <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Menu</span>
         <div class="flex flex-col gap-1 w-5">
           <span class="w-full h-0.5 bg-black transition-all duration-300"></span>
@@ -104,33 +104,35 @@
       <section class="flex flex-col items-center justify-center relative w-full pt-10 md:pt-12 pb-20">
 
         <!-- Tilted Badge (Layer 1) -->
-        <div
-          class="relative w-[76%] md:w-[60%] max-w-2xl bg-[#555555] rounded-[32px] md:rounded-[40px] aspect-[16/8] md:aspect-[14/6] rotate-3 flex flex-col justify-between overflow-hidden z-20 mx-auto shadow-xl">
-
-          <!-- PRAISE text -->
-          <div class="absolute top-3 md:top-8 left-0 w-full flex justify-center z-0">
-            <span
-              class="font-ojuju text-[4.25rem] md:text-[6rem] lg:text-[10rem] leading-[0.7] text-black font-semibold tracking-wide uppercase">PRAISE</span>
-          </div>
-
-          <!-- Silhouette Image (Partially Masked) -->
+        <div class="relative w-[76%] md:w-[60%] max-w-2xl mx-auto z-20 animate-load-badge">
           <div
-            class="absolute bottom-0 right-[-2%] md:right-[-2%] w-[54%] md:w-[50%] h-[90%] md:h-[80%] flex items-end justify-end z-10 pointer-events-none">
-            <img src="/src/assets/hero-card-img.png" alt="Silhouette"
-              class="w-full h-full object-contain object-bottom grayscale brightness-50">
-          </div>
+            class="relative w-full bg-[#555555] rounded-[32px] md:rounded-[40px] aspect-[16/8] md:aspect-[14/6] flex flex-col justify-between overflow-hidden shadow-xl badge-float">
 
-          <!-- Bottom Left Text -->
-          <div
-            class="absolute bottom-6 md:bottom-10 left-6 md:left-12 flex flex-col text-white font-ojuju uppercase tracking-[0.15em] text-[10px] md:text-sm font-medium leading-relaxed z-20">
-            <span>DESIGNER</span>
-            <span>&amp; CREATIVE</span>
-          </div>
+            <!-- PRAISE text -->
+            <div class="absolute top-3 md:top-8 left-0 w-full flex justify-center z-0">
+              <span
+                class="font-ojuju text-[4.25rem] md:text-[6rem] lg:text-[10rem] leading-[0.7] text-black font-semibold tracking-wide uppercase">PRAISE</span>
+            </div>
 
+            <!-- Silhouette Image (Partially Masked) -->
+            <div
+              class="absolute bottom-0 right-[-2%] md:right-[-2%] w-[54%] md:w-[50%] h-[90%] md:h-[80%] flex items-end justify-end z-10 pointer-events-none">
+              <img src="/src/assets/hero-card-img.png" alt="Silhouette"
+                class="w-full h-full object-contain object-bottom grayscale brightness-50">
+            </div>
+
+            <!-- Bottom Left Text -->
+            <div
+              class="absolute bottom-6 md:bottom-10 left-6 md:left-12 flex flex-col text-white font-ojuju uppercase tracking-[0.15em] text-[10px] md:text-sm font-medium leading-relaxed z-20">
+              <span>DESIGNER</span>
+              <span>&amp; CREATIVE</span>
+            </div>
+
+          </div>
         </div>
 
         <!-- Name "TOCHURWU" (Layer 2) -->
-        <div class="relative z-10 -mt-7 md:-mt-10 w-full flex justify-center">
+        <div class="relative z-10 -mt-7 md:-mt-10 w-full flex justify-center animate-load-name">
           <h1
             class="font-ojuju text-[17.5vw] md:text-[15.1vw] tracking-tighter leading-none text-black font-semibold whitespace-nowrap">
             TOCHUKWU
@@ -181,7 +183,7 @@
       <div class="flex flex-col gap-16">
         <!-- Margarita Finance Project Card -->
         <div
-          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10 scroll-reveal-el">
           <!-- Left: Content -->
           <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
             <div>
@@ -199,11 +201,11 @@
 
             <div class="mt-12 flex flex-wrap gap-4">
               <a href="https://x.com/margfinance"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 View On X
               </a>
               <a href="https://www.figma.com/design/0ehAaKvG9mIsytKxSAlOPC/Margarita-Finance-workspace?node-id=0-1&t=8VRtFcJUyxKqRJKe-1"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 Figma file
               </a>
             </div>
@@ -233,7 +235,7 @@
 
         <!-- NU START Project Card -->
         <div
-          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10 scroll-reveal-el">
           <!-- Left: Content -->
           <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
             <div>
@@ -252,11 +254,11 @@
 
             <div class="mt-12 flex flex-wrap gap-4">
               <a href="https://www.instagram.com/nustartcommunity"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 View On Instagram
               </a>
               <a href="https://www.figma.com/design/B2cWEhNggVPya6afljy0Sf/NU-Start-portfolio?node-id=0-1&t=q2ec64Mweh8KHzm6-1"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 Figma file
               </a>
             </div>
@@ -309,7 +311,7 @@
       <div class="flex flex-col gap-16">
         <!-- OAKCHAIN Project Card -->
         <div
-          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10 scroll-reveal-el">
           <!-- Left: Content -->
           <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
             <div>
@@ -328,11 +330,11 @@
 
             <div class="mt-12 flex flex-wrap gap-4">
               <a href="https://oakchain-website.vercel.app/"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 View live website
               </a>
               <a href="https://www.figma.com/design/HN3D3TZHukGeRyw6oLq3n3/Oak-Portfolio?node-id=0-1&t=hX27IrUTF7q1zvZv-1"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 Figma file
               </a>
             </div>
@@ -352,7 +354,7 @@
 
         <!-- GAINIFY Project Card -->
         <div
-          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10">
+          class="bg-black text-white rounded-[2.5rem] md:rounded-[3.5rem] p-6 md:p-12 flex flex-col lg:flex-row gap-12 w-full border border-white/10 scroll-reveal-el">
           <!-- Left: Content -->
           <div class="w-full lg:w-1/2 flex flex-col justify-between py-4">
             <div>
@@ -377,7 +379,7 @@
 
             <div class="mt-12 flex flex-wrap gap-4">
               <a href="https://www.figma.com/design/cxrqN82HS1RFMfiBinHaCj/Gainify-Workspace?node-id=0-1&t=Sbfpn2GWkw1mVsWH-1"
-                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                class="bg-primary text-black px-8 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity magnetic-btn">
                 Figma file
               </a>
             </div>
@@ -414,28 +416,28 @@
       <div class="w-full flex flex-col px-2 md:px-4">
         <!-- Item 1 -->
         <div
-          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium">
+          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium scroll-reveal-el">
           <div class="w-1/3 text-left font-bold md:text-lg">KREATORS</div>
           <div class="w-1/3 text-center opacity-60">2025</div>
           <div class="w-1/3 text-right opacity-80">GRAPHIC DESIGNS & WEBSITE UI</div>
         </div>
         <!-- Item 2 -->
         <div
-          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium">
+          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium scroll-reveal-el">
           <div class="w-1/3 text-left font-bold md:text-lg">KEBULAN GRID</div>
           <div class="w-1/3 text-center opacity-60">2025</div>
           <div class="w-1/3 text-right opacity-80">UI DESIGN</div>
         </div>
         <!-- Item 3 -->
         <div
-          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium">
+          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium scroll-reveal-el">
           <div class="w-1/3 text-left font-bold md:text-lg">ALGOFAMINIONS</div>
           <div class="w-1/3 text-center opacity-60">2022</div>
           <div class="w-1/3 text-right opacity-80">UI & GRAPHIC DESIGN</div>
         </div>
         <!-- Item 4 -->
         <div
-          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium">
+          class="flex flex-row justify-between items-center py-5 border-b border-black/20 text-[10px] md:text-sm uppercase tracking-widest font-medium scroll-reveal-el">
           <div class="w-1/3 text-left font-bold md:text-lg">BLOCKCYCLE</div>
           <div class="w-1/3 text-center opacity-60">2022</div>
           <div class="w-1/3 text-right opacity-80">GRAPHIC DESIGN</div>
@@ -467,7 +469,7 @@
         </div>
 
         <!-- Timeline Item 2018 -->
-        <div class="flex flex-col items-center text-center max-w-4xl">
+        <div class="flex flex-col items-center text-center max-w-4xl timeline-item">
           <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2018</h3>
           <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
             I gained admission to study Graphic Design under the School of Art at Ambrose Alli University driven by my
@@ -476,7 +478,7 @@
         </div>
 
         <!-- Timeline Item 2019 -->
-        <div class="flex flex-col items-center text-center max-w-4xl">
+        <div class="flex flex-col items-center text-center max-w-4xl timeline-item">
           <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2019</h3>
           <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
             I got a job at <span class="font-bold text-white opacity-100">Swirge</span>, a social media platform built
@@ -487,7 +489,7 @@
         </div>
 
         <!-- Timeline Item 2022 -->
-        <div class="flex flex-col items-center text-center max-w-4xl">
+        <div class="flex flex-col items-center text-center max-w-4xl timeline-item">
           <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2022</h3>
           <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
             I graduated from the prestigious Ambrose Alli University with a <span
@@ -498,7 +500,7 @@
         </div>
 
         <!-- Timeline Item 2023 -->
-        <div class="flex flex-col items-center text-center max-w-4xl">
+        <div class="flex flex-col items-center text-center max-w-4xl timeline-item">
           <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2023</h3>
           <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
             I landed several graphic design gigs with projects like <span
@@ -510,7 +512,7 @@
         </div>
 
         <!-- Timeline Item 2024 -->
-        <div class="flex flex-col items-center text-center max-w-4xl">
+        <div class="flex flex-col items-center text-center max-w-4xl timeline-item">
           <h3 class="text-8xl md:text-8xl lg:text-9xl font-ojuju mb-6">2024</h3>
           <p class="text-sm md:text-base leading-relaxed opacity-70 font-light tracking-wide">
             Looking back, I've had the privilege of collaborating with a diverse range of clients, from solo
@@ -543,7 +545,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         <!-- Review 1 -->
         <div
-          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden">
+          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden scroll-reveal-el">
           <div class="relative z-10">
             <div
               class="text-[25rem] md:text-[30rem] font-ojuju leading-none absolute -top-20 md:-top-30 -left-8 md:-left-12 select-none opacity-100 pointer-events-none">
@@ -562,7 +564,7 @@
 
         <!-- Review 2 -->
         <div
-          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden">
+          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden scroll-reveal-el">
           <div class="relative z-10">
             <div
               class="text-[25rem] md:text-[30rem] font-ojuju leading-none absolute -top-20 md:-top-30 -left-8 md:-left-12 select-none opacity-100 pointer-events-none">
@@ -581,7 +583,7 @@
 
         <!-- Review 3 -->
         <div
-          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden">
+          class="border border-black rounded-[2rem] p-8 md:p-10 flex flex-col justify-between h-full relative overflow-hidden scroll-reveal-el">
           <div class="relative z-10">
             <div
               class="text-[25rem] md:text-[30rem] font-ojuju leading-none absolute -top-20 md:-top-30 -left-8 md:-left-12 select-none opacity-100 pointer-events-none">
@@ -612,7 +614,7 @@
 
       <div class="w-full flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
         <!-- Left: Services List -->
-        <div class="w-full lg:w-1/2 space-y-6 md:space-y-8">
+        <div class="w-full lg:w-1/2 space-y-6 md:space-y-8 scroll-reveal-el">
           <div class="flex items-center gap-4 md:gap-6 group">
             <div class="flex flex-row gap-1 opacity-100">
               <div class="w-1.5 h-1.5 bg-black"></div>
@@ -666,7 +668,7 @@
 
         <!-- Right: Pattern Image -->
         <div
-          class="w-full lg:w-1/2 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden aspect-[16/10] lg:aspect-[4/3] shadow-lg border border-black/5">
+          class="w-full lg:w-1/2 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden aspect-[16/10] lg:aspect-[4/3] shadow-lg border border-black/5 scroll-reveal-el">
           <img src="/16.png" class="w-full h-full object-cover" alt="Services Visual">
         </div>
       </div>
@@ -695,7 +697,7 @@
         <!-- Book Service -->
         <div class="flex flex-col items-center gap-4">
           <button id="book-service-btn"
-            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors">
+            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors magnetic-btn">
             <span class="text-lg md:text-xl font-medium">Book Service</span>
             <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -711,7 +713,7 @@
         <!-- Connect -->
         <div class="flex flex-col items-center gap-4">
           <a href="https://www.linkedin.com/in/tochukwunwolisa"
-            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors">
+            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors magnetic-btn">
             <span class="text-lg md:text-xl font-medium">Connect</span>
             <span class="text-blue-500 font-bold text-xl">in</span>
           </a>
@@ -721,7 +723,7 @@
         <!-- Follow -->
         <div class="flex flex-col items-center gap-4">
           <a href="https://x.com/degenplayy"
-            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors">
+            class="bg-black text-white w-full py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-black/90 transition-colors magnetic-btn">
             <span class="text-lg md:text-xl font-medium">Follow</span>
             <svg class="w-5 h-5 fill-current text-[#1DA1F2]" viewBox="0 0 24 24">
               <path
@@ -808,7 +810,7 @@
         </div>
 
         <button type="submit"
-          class="bg-black text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-black/90 hover:scale-[1.02] active:scale-[0.98] transition-all mt-2 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)]">
+          class="bg-black text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-black/90 hover:scale-[1.02] active:scale-[0.98] transition-all mt-2 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] magnetic-btn">
           Submit Request
         </button>
       </form>
