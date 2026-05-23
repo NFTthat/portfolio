@@ -51,12 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const itemCenter = rect.top + rect.height / 2;
       const distanceToCenter = Math.abs(windowCenter - itemCenter);
       
-      // If within 200px of center, full opacity and scaled, else fade out to 0.4
-      if (distanceToCenter < 200) {
+      // If within 30% of viewport height from center, full opacity
+      const threshold = window.innerHeight * 0.3;
+      if (distanceToCenter < Math.max(200, threshold)) {
         item.style.opacity = '1';
         item.style.transform = 'scale(1.03)';
       } else {
-        item.style.opacity = '0.35';
+        item.style.opacity = '0.5';
         item.style.transform = 'scale(0.97)';
       }
     });
